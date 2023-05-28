@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <title>Register online</title>
+    <link href="css/css.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../伯爵旅拍/css/main.css">
+    <link rel="stylesheet" href="../伯爵旅拍/layui/css/layui.css">
+</head>
+<body>
+	<style type="text/css">
+	.wrapper {
+	    height: 800px;
+	    width: 600px;
+	    margin:0 auto;
+	}
+	ul li label {
+	    width: 80px;
+	    text-align: right;
+		display:inline-block;
+	}
+	body {
+	    font-size: 14px;
+	}
+	.wrapper h1 {
+	    font-size: 20px;
+		margin:30px;
+	}
+	#form1 fieldset legend {
+	    font-size: 20px;
+	}
+	.wrapper #form1 fieldset {
+	    border-width: 10px;
+	    border-style: solid;
+	}
+	#form1 fieldset ul {
+	    margin: 10px;
+	    padding: 5px;
+	    list-style-type: none;
+	}
+	fieldset ul li {
+	    margin: 10px 0;
+	}
+	ul li span {
+	    -webkit-box-shadow: 0px 0px;
+	    box-shadow: 0px 0px;
+	    color: #FF0004;
+	}
+	#errorMsg {
+	    display: none;
+	}
+	ul li #sex {
+	    width: 60px;
+	    text-align: left;
+	}
+	.btn_submit {
+	    margin: 10px 120px;
+	}
+	.btn_reset {
+	    margin: 10px 30px;
+	}
+	</style>
+<div class="head">
+    <div class="logo"><img src="images/logo.jpg"/></div>
+    <div class="nav">
+        <ul>
+           <li><a href="index.html">Home </a></li>
+           <li><a href="Health%20information.html">Health information </a></li>
+           <li><a href="health%20video.html">Health videos</a></li>
+           <li><a href="Nutrition%20guide.html">Nutrition guide</a></li>
+           <li><a href="Register online.html">Register online</a></li>
+        </ul>
+    </div>
+</div>
+<div class="main">
+	<div class="wrapper">
+	  <h1>Register online</h1>
+		<form action="" id="form1" onSubmit="return check()">
+		<fieldset><legend>Basic information</legend>
+			<ul><li>
+				<label for="txtUserName">Username:</label>
+				<input name="txtUserName" type="text" required="required" id="textUserName" placeholder="Please enter a username"><span>*</span>
+				</li>
+			<li><label for="txtUserName">Password:</label>
+				<input name="txtPwd" type="password" required="required" id="txtPwd" placeholder="Please enter a password"><span>*</span></li>
+			<li>
+			  <label for="password">Confirm Password:</label>
+	          <input name="txtRepwd" type="password" required="required" id="txtRepwd" placeholder="Please enter a confirmation password"><span>*</span><span id="errorMsg">两次密码不一致！</span>
+			</li>
+			</ul>
+			</fieldset>
+			
+		<fieldset><legend>Contact</legend>
+			<ul><li>
+				<label for="tel">Contact Number:</label>
+			  <input type="tel" name="tel" id="tel">
+			</li>
+				<li>
+				<label for="email">Email:</label>
+				<a href="mailto:3290892509@qq.com"><input type="email" name="email" id="email"></a>
+				</li>
+			</ul>
+		  </fieldset>	
+			
+		<fieldset><legend>Additional Information</legend>
+			<ul><li>Gender:
+			    <label id="sex">
+			      <input name="RadioGroup1" type="radio" id="RadioGroup1_0" value="man" checked="checked">
+			      man</label>
+			    <label>
+			      <input type="radio" name="RadioGroup1" value="woman" id="RadioGroup1_1">
+			      woman</label>
+	        </li>
+			  <li>
+				  Hobby:
+			      <label id="sex">
+			        <input type="checkbox" name="hobby" value="swim" id="hobby_0">
+			       swim</label>
+			      <label>
+			        <input type="checkbox" name="hobby" value="read" id="hobby_1">
+			        read</label>
+			      <label>
+			        <input type="checkbox" name="hobby" value="travel" id="hobby_2">
+			        travel</label>
+					<label>
+			        <input type="checkbox" name="hobby" value="travel" id="hobby_3">
+			        game</label>
+		
+			  </li>
+			  <li>
+			    <label for="textarea">Introduce yourself:</label>
+	            <textarea name="textarea" cols="50" rows="10" id="textarea"></textarea>
+			  </li>
+	
+			</ul>
+			
+			</fieldset>	
+		<p class="btn_reset">
+		  <input type="submit" onclick="check()" class="btn_submit">
+		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset">
+		  </p>	
+			
+			
+	  </form>
+	</div>
+	
+</div> 
+   
+<div class="foot">
+   <p>© Eat healthy</p>
+</div>
+</body>
+<script>
+	function check(){
+			 window.location.href="success.html";
+		var pwd=document.getElementById("txtPwd").value;
+		var repwd=document.getElementById("txtRepwd").value;
+		if(pwd!=repwd)
+			{
+				document.getElementById("errorMsg").style.display="inline-block";
+				return false;
+			}
+		else 
+						{
+							
+				document.getElementById("errorMsg").style.display="inline-block";
+			
+				return true;
+					
+			}
+			
+		
+	}
+	</script>
+
+ 
+</html>
